@@ -56,7 +56,7 @@ function is_referenced_class($class_id) {
     $statement = $db->prepare($query);
     $statement->bindValue(':class_id', $class_id);
     $statement->execute();
-    
+
     $result = $statement->fetchColumn();
     $statement->closeCursor();
 
