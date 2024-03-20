@@ -46,4 +46,20 @@ function delete_type($type_id) {
     $statement->execute();
     $statement->closeCursor();
 }
+
+function is_referenced_type($type_id) {
+    global $db;
+
+    $query = 'SELECT COUNT(*) FROM vehicles
+              WHERE typeID = :type_id';
+    
+    $statement = $db->prepare($query);
+    $statement->bindValue(':type_id', $type_id);
+    $statement->execute();
+    
+    $result = $statement->fetchColumn();
+    $statement->closeCursor();
+
+    return $result > 0;
+}
 ?>

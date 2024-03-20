@@ -33,7 +33,7 @@
         </table>
     </section>
     <?php else : ?>
-        <p class="main">No Types Exist Yet</p>
+        <p>No Types Exist Yet</p>
     <?php endif; ?>
 
     <section class="main">

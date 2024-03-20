@@ -46,4 +46,20 @@ function delete_class($class_id) {
     $statement->execute();
     $statement->closeCursor();
 }
+
+function is_referenced_class($class_id) {
+    global $db;
+
+    $query = 'SELECT COUNT(*) FROM vehicles
+              WHERE classID = :class_id';
+    
+    $statement = $db->prepare($query);
+    $statement->bindValue(':class_id', $class_id);
+    $statement->execute();
+    
+    $result = $statement->fetchColumn();
+    $statement->closeCursor();
+
+    return $result > 0;
+}
 ?>

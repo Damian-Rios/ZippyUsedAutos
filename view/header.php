@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="view/CSS/main.css">
 </head>
 <body>
-<main>
-    <div class="wrapper">
-        <header>
-            <h1>Zippy Used Autos</h1>
-        </header>
+    <main>
+        <div class="wrapper">
+            <header>
+                <h1>Zippy Used Autos</h1>
+            </header>

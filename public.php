@@ -1,10 +1,26 @@
 <?php
-
 require('model/database.php');
 require('model/vehicles_db.php');
 require('model/class_db.php');
 require('model/make_db.php');
 require('model/type_db.php');
+
+$sort_order = filter_input(INPUT_GET, 'sort_order', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+$class_id = filter_input(INPUT_POST, 'class_id', FILTER_VALIDATE_INT);
+if (!$class_id) {
+    $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
+}
+
+$make_id = filter_input(INPUT_POST, 'make_id', FILTER_VALIDATE_INT);
+if (!$make_id) {
+    $make_id = filter_input(INPUT_GET, 'make_id', FILTER_VALIDATE_INT);
+}
+
+$type_id = filter_input(INPUT_POST, 'type_id', FILTER_VALIDATE_INT);
+if (!$type_id) {
+    $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
+}
 
 $action = filter_input(INPUT_POST, 'action', FILTER_UNSAFE_RAW);
 if ($action == NULL) {
@@ -15,11 +31,6 @@ if ($action == NULL) {
 }
 
 if($action == 'list_vehicles') {
-    $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
-    $make_id = filter_input(INPUT_GET, 'make_id', FILTER_VALIDATE_INT);
-    $type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
-    $sort_order = filter_input(INPUT_GET, 'sort_order', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
     if ($sort_order !== 'price_desc' && $sort_order !== 'year_desc') {
         $sort_order = 'price_desc';
     }

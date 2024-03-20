@@ -59,17 +59,17 @@
                     <td><?php echo $vehicle['Price']; ?></td>
 
                     <td>
-                        <form action="." method="post">
+                        <form action="admin.php" method="post">
                             <input type="hidden" name="action" value="delete_vehicle">
                             <input type="hidden" name="vehicle_id" value="<?php echo $vehicle['vehicleID']; ?>">
-                            <button class="remove-button" type="submit" value="Delete">Remove</button>
+                            <button class="remove-button" type="submit">Remove</button>
                         </form>
                     </td>
                 </tr>
                 <?php endforeach; ?>
             </table>    
         <?php else : ?>
-            <p class="main">No Vehicles Exist Yet</p>
+            <p>No Vehicles Exist Yet</p>
         <?php endif; ?>
         </section>
     </section>

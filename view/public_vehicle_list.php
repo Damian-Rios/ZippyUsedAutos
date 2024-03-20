@@ -27,34 +27,34 @@
                 <button class="button" type="submit" value="submit">Submit</button>
             </div>
         </form>
-    </section>
+    
+        <section class="main table-container">
+        <?php if (!empty($vehicles)) : ?>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Type</th>
+                    <th>Class</th>
+                    <th>Price</th>
+                </tr>
 
-    <section id="list" class="main table-container">
-    <?php if (!empty($vehicles)) : ?>
-        <table>
-            <tr>
-                <th>Year</th>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Type</th>
-                <th>Class</th>
-                <th>Price</th>
-            </tr>
-
-            <?php foreach ($vehicles as $vehicle) : ?>
-            <tr>
-                <td><?php echo $vehicle['Year']; ?></td>
-                <td><?php echo get_make_name($vehicle['makeID']); ?></td>
-                <td><?php echo $vehicle['Model']; ?></td>
-                <td><?php echo get_type_name($vehicle['typeID']); ?></td>
-                <td><?php echo get_class_name($vehicle['classID']); ?></td>
-                <td><?php echo $vehicle['Price']; ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>    
-    <?php else : ?>
-        <p class="main">No Vehicles Exist Yet</p>
-    <?php endif; ?>
+                <?php foreach ($vehicles as $vehicle) : ?>
+                <tr>
+                    <td><?php echo $vehicle['Year']; ?></td>
+                    <td><?php echo get_make_name($vehicle['makeID']); ?></td>
+                    <td><?php echo $vehicle['Model']; ?></td>
+                    <td><?php echo get_type_name($vehicle['typeID']); ?></td>
+                    <td><?php echo get_class_name($vehicle['classID']); ?></td>
+                    <td><?php echo $vehicle['Price']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </table>    
+        <?php else : ?>
+            <p>No Vehicles Exist Yet</p>
+        <?php endif; ?>
+        </section>
     </section> 
     <?php include('footer.php'); ?>
     </div>

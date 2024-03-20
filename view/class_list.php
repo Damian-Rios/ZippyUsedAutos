@@ -32,7 +32,7 @@
             <?php endforeach; ?>
         </table>
     <?php else : ?>
-        <p class="main">No Classes Exist Yet</p>
+        <p>No Classes Exist Yet</p>
     <?php endif; ?>
     </section>
 
