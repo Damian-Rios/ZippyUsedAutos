@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
     <section class="main">
-        <form action="public.php" method="get" class="options">
+        <form action="index.php" method="get" class="options">
             <select name="make_id" id="make_id">
                 <option value="all">View All Makes</option>
                 <?php foreach ($makes as $make) : ?>
