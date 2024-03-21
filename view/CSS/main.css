@@ -224,12 +224,15 @@ table tr:nth-child(even) {
 }
 
 footer {
+    position: static;
     bottom: 0;
     width: 100%;
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    margin-top: 100px;
+    margin-bottom: 0;
 }
 
 footer p {
@@ -339,6 +342,10 @@ footer p {
     .main {
         margin: auto;
         padding: 20px;
+    }
+
+    footer {
+        position: static;
     }
 
     .options, .options select {
