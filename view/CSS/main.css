@@ -224,7 +224,7 @@ table tr:nth-child(even) {
 }
 
 footer {
-    position:relative;
+    position: static;
     bottom: 0;
     width: 100%;
     background-color: #333;
@@ -389,10 +389,6 @@ footer p {
 
     .button, .remove-button {
         padding: 10px 20px;
-    }
-    
-    footer {
-        position: static;
     }
 }
 
