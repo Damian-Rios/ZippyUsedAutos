@@ -224,7 +224,6 @@ table tr:nth-child(even) {
 }
 
 footer {
-    position: static;
     bottom: 0;
     width: 100%;
     background-color: #333;
@@ -238,6 +237,20 @@ footer p {
 }
 
 @media screen and (min-width: 376px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .main {
+        flex: 1;
+    }
+
+    footer {
+        position: fixed;
+    }
+
     header {
         font-size: 18px; /* Adjust header font size for smaller screens */
         padding: 8px 0; /* Reduce header padding */
@@ -254,6 +267,7 @@ footer p {
     .main {
         width: 80%; /* Adjust main content width */
         padding: 15px; /* Increase main content padding */
+        
     }
 
     .options, .options select {
