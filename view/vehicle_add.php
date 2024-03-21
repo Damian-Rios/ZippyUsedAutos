@@ -62,12 +62,4 @@
         </form>
     </section>
 </main>
-
-<script>
-    document.getElementById('vehicle_price').addEventListener('input', function(evt) {
-        var price = evt.target.value.replace(/\D/g, '');
-        evt.target.value = '$' + parseFloat(price).toLocaleString();
-    });
-</script>
-
 <?php include('view/footer.php'); ?>
