@@ -72,7 +72,7 @@
             <p>No Vehicles Exist Yet</p>
         <?php endif; ?>
         </section>
+        <?php include('view/footer.php'); ?>
     </section>
-    <?php include('view/footer.php'); ?>
     </div>
 </main>
