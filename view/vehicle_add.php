@@ -53,8 +53,8 @@
             <br>
 
             <label>Price:</label>
-            <?php $formatted_price = '$' . number_format((float) $vehicle_price, 2);?>
-            <input type="text" name="vehicle_price" value="<?php echo $formatted_price; ?>" required/>
+            <span>$</span>
+            <input type="text" name="vehicle_price" id="vehicle_price" required/>
             <br>
 
             <label>&nbsp;</label>
@@ -63,4 +63,12 @@
         </form>
     </section>
 </main>
+
+<script>
+    document.getElementById('vehicle_price').addEventListener('input', function(evt) {
+        var price = evt.target.value.replace(/\D/g, '');
+        evt.target.value = '$' + parseFloat(price).toLocaleString();
+    });
+</script>
+
 <?php include('view/footer.php'); ?>
