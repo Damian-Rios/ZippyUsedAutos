@@ -53,7 +53,6 @@
             <br>
 
             <label>Price:</label>
-            <span>$</span>
             <input type="text" name="vehicle_price" id="vehicle_price" required/>
             <br>
 
