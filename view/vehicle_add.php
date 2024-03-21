@@ -53,7 +53,7 @@
             <br>
 
             <label>Price:</label>
-            <?php $formatted_price = '$' . number_format($vehicle_price, 2);?>
+            <?php $formatted_price = '$' . number_format((float) $vehicle_price, 2);?>
             <input type="text" name="vehicle_price" value="<?php echo $formatted_price; ?>" required/>
             <br>
 
